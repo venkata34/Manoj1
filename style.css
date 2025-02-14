@@ -1,84 +1,89 @@
+/* style.css */
 body {
-    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.book-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
+    position: relative;
+    z-index: 1;
 }
-.book-container {
-    perspective: 1000px;
-    cursor: pointer;
-}
+
 .book {
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 250px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 1s ease-in-out;
+    transition: transform 1s;
 }
+
 .closed {
     transform: rotateY(0deg);
 }
+
 .open {
     transform: rotateY(-180deg);
 }
+
 .cover, .page {
-    position: absolute;
     width: 100%;
     height: 100%;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    border-radius: 10px;
-}
-.cover {
-    background: pink;
+    position: absolute;
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #fff;
+    border: 2px solid #d81b60;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cover {
+    background: #d81b60;
+    color: white;
     font-size: 20px;
     font-weight: bold;
-    color: white;
 }
+
 .page.left {
-    backface-visibility: hidden;
-    transform: rotateY(0deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.page.right {
     transform: rotateY(180deg);
-    backface-visibility: hidden;
-    text-align: center;
-    padding: 20px;
 }
+
 .event-photo {
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    width: 100%;
+    height: auto;
 }
-.invitation-title {
-    font-size: 24px;
-    color: #d63384;
+
+.page.right {
+    padding: 20px;
+    text-align: center;
 }
-.event-detail {
-    font-size: 18px;
-    color: #333;
-    margin-top: 10px;
-}
-@keyframes sparkle {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-.sparkles {
+
+/* Falling rose petals effect */
+.petal {
     position: absolute;
-    width: 5px;
-    height: 5px;
-    background: white;
-    box-shadow: 0 0 10px white;
-    border-radius: 50%;
-    animation: sparkle 1.5s infinite;
+    width: 20px;
+    height: 20px;
+    background: url('rose-petal.png') no-repeat center/contain;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
