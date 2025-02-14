@@ -10,6 +10,7 @@ body {
 
 .book-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -18,12 +19,17 @@ body {
 }
 
 .book {
-    width: 400px;
+     width: 400px;
     height: 250px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .closed {
     transform: rotateY(0deg);
@@ -44,6 +50,8 @@ body {
     background: #fff;
     border: 2px solid #d81b60;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    flex-direction: row;
+    text-align: center;
 }
 
 .cover {
@@ -65,6 +73,9 @@ body {
 .page.right {
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Falling rose petals effect */
@@ -93,6 +104,7 @@ body {
     .book {
         width: 90%;
         height: auto;
+        flex-direction: coloumn;
     }
 
     .cover, .page {
