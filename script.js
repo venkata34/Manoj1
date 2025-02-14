@@ -7,22 +7,26 @@ function openBook() {
 
 // Generate falling rose petals dynamically
 document.addEventListener("DOMContentLoaded", function() {
-    const numberOfPetals = 20;
-    for (let i = 0; i < numberOfPetals; i++) {
-        createPetal();
-    }
-});
+    function createPetal() {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        document.body.appendChild(petal);
 
-function createPetal() {
-    const petal = document.createElement("div");
-    petal.classList.add("petal");
-    document.body.appendChild(petal);
-    
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    
-    setTimeout(() => {
-        petal.remove();
-        createPetal(); // Continuously generate new petals
-    }, 5000);
-}
+        // Set random position
+        petal.style.left = Math.random() * 100 + "vw";
+
+        // Random animation duration for natural effect
+        let duration = Math.random() * 3 + 2; // Between 2s to 5s
+        petal.style.animationDuration = duration + "s";
+
+        // Remove petal after it falls
+        setTimeout(() => {
+            petal.remove();
+        }, duration * 1000);
+    }
+
+    // Generate petals continuously without gaps
+    setInterval(() => {
+        createPetal();
+    }, 300); // New petal every 300ms
+});
