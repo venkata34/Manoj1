@@ -1,6 +1,6 @@
-document.getElementById("yes-btn").addEventListener("click", function() {
-    document.getElementById("response").innerHTML = "Yay! I love you ❤️";
-});
-document.getElementById("no-btn").addEventListener("click", function() {
-    document.getElementById("response").innerHTML = "Oh no! 😢";
-});
+function openBook() {
+    document.getElementById("book").classList.remove("closed");
+    document.getElementById("book").classList.add("open");
+    document.getElementById("bg-music").play();
+}
+
