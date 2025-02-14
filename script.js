@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const bgMusic = document.getElementById("bg-music");
 
     function openBook() {
-        console.log("📖 Book clicked!"); // Debugging log
+        console.log("📖 Book clicked!");
         book.classList.remove("closed");
         book.classList.add("open");
         bgMusic.play();
     }
 
-    // Make the entire book clickable
+    // Fix: Attach event listeners correctly
     book.addEventListener("click", openBook);
-    book.addEventListener("touchstart", openBook); 
+    book.addEventListener("touchstart", openBook);
 
     // 🌹 Generate Falling Rose Petals
     function createPetal() {
@@ -19,12 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
         petal.classList.add("petal");
 
         petal.style.left = Math.random() * 100 + "vw";
-        petal.style.animationDuration = Math.random() * 5 + 3 + "s"; 
-        petal.style.top = "-10vh"; 
+        petal.style.animationDuration = Math.random() * 5 + 3 + "s";
+        petal.style.top = "-10vh"; // Start from the top
 
         document.body.appendChild(petal);
-
-        console.log("🌹 Petal created!");
 
         setTimeout(() => {
             petal.remove();
