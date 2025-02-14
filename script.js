@@ -1,32 +1,34 @@
-// script.js
-function openBook() {
-    document.getElementById("book").classList.remove("closed");
-    document.getElementById("book").classList.add("open");
-    document.getElementById("bg-music").play();
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const book = document.getElementById("book");
+    const bgMusic = document.getElementById("bg-music");
 
-// Generate falling rose petals dynamically
-document.addEventListener("DOMContentLoaded", function() {
+    // Open book when cover is clicked
+    document.querySelector(".cover").addEventListener("click", function () {
+        book.classList.remove("closed");
+        book.classList.add("open");
+        bgMusic.play();
+    });
+
+    // Generate falling rose petals dynamically
     function createPetal() {
         const petal = document.createElement("div");
         petal.classList.add("petal");
+
+        // Randomize starting position
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = Math.random() * 5 + 3 + "s"; // 3s to 8s duration
+
         document.body.appendChild(petal);
 
-        // Set random position
-        petal.style.left = Math.random() * 100 + "vw";
-
-        // Random animation duration for natural effect
-        let duration = Math.random() * 3 + 2; // Between 2s to 5s
-        petal.style.animationDuration = duration + "s";
-
-        // Remove petal after it falls
+        // Remove petal after animation completes & create new one
         setTimeout(() => {
             petal.remove();
-        }, duration * 1000);
+            createPetal(); 
+        }, 8000);
     }
 
-    // Generate petals continuously without gaps
-    setInterval(() => {
-        createPetal();
-    }, 300); // New petal every 300ms
+    // Generate multiple petals
+    for (let i = 0; i < 20; i++) {
+        setTimeout(createPetal, i * 500); // Stagger petal appearance
+    }
 });
