@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    background-color: #ffcccc;
+    font-family: Arial, sans-serif;
+}
+.container {
+    margin-top: 100px;
+}
+h1 {
+    color: red;
+}
+button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+#yes-btn {
+    background-color: pink;
+}
+#no-btn {
+    background-color: lightgray;
+}
