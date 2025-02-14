@@ -2,12 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const book = document.getElementById("book");
     const bgMusic = document.getElementById("bg-music");
     const cover = document.getElementById("cover");
+    const photoPage = document.getElementById("photo-page");
+    const eventPhoto = document.querySelector(".event-photo");
 
-    // Open book when cover is clicked
+    // Open book when cover is clicked & reveal photo
     cover.addEventListener("click", function () {
         book.classList.remove("closed");
         book.classList.add("open");
         bgMusic.play();
+        eventPhoto.classList.remove("hidden"); // Show photo
     });
 
     // Generate falling rose petals dynamically
