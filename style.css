@@ -8,13 +8,12 @@ body {
     overflow: hidden;
 }
 
-/* Book Container - Fix Positioning */
+/* Centering the Book */
 .book-container {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centers the book */
+    justify-content: center;
     position: relative;
     z-index: 1;
 }
@@ -76,6 +75,11 @@ body {
     justify-content: center;
 }
 
+/* Hide photo until book is tapped */
+.hidden {
+    display: none;
+}
+
 /* Image Inside the Book */
 .event-photo {
     max-width: 90%;
@@ -90,11 +94,13 @@ body {
     background: url('rose1.jpg') no-repeat center/contain;
     opacity: 0.8;
     animation: fall linear infinite;
+    top: -5vh; /* 🌟 FIX: Petals Start Falling from Above */
 }
 
+/* Petal Falling Animation */
 @keyframes fall {
     0% {
-        transform: translateY(-10vh) rotate(0deg);
+        transform: translateY(-5vh) rotate(0deg);
         opacity: 1;
     }
     100% {
