@@ -87,6 +87,7 @@ body {
 }
 
 /* 🌹 Falling Rose Petals Effect */
+/* 🌹 Falling Rose Petals Effect */
 .petal {
     position: absolute;
     width: 25px;
@@ -94,7 +95,7 @@ body {
     background: url('rose1.jpg') no-repeat center/contain;
     opacity: 0.8;
     animation: fall linear infinite;
-    top: -5vh; /* 🌟 FIX: Petals Start Falling from Above */
+    top: -10vh; /* 🌟 FIX: Petals Start from Above */
 }
 
 /* Petal Falling Animation */
@@ -108,6 +109,7 @@ body {
         opacity: 0;
     }
 }
+
 
 /* 🌟 Responsive Design for Mobile */
 @media (max-width: 600px) {
