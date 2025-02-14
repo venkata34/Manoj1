@@ -1,4 +1,4 @@
-/* style.css */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #fce4ec;
@@ -8,18 +8,21 @@ body {
     overflow: hidden;
 }
 
+/* Book Container */
 .book-container {
+    min-height: 100vh; /* Ensure full height */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 150vh;
+    justify-content: flex-start; /* Keep book higher on screen */
+    padding-top: 10px; /* Adjust padding to move book up */
     position: relative;
     z-index: 1;
 }
 
+/* Book Styling */
 .book {
-     width: 500px;
+    width: 500px;
     height: 500px;
     position: relative;
     transform-style: preserve-3d;
@@ -30,7 +33,7 @@ body {
     justify-content: center;
 }
 
-
+/* Book Open & Close Transitions */
 .closed {
     transform: rotateY(0deg);
 }
@@ -39,6 +42,7 @@ body {
     transform: rotateY(-180deg);
 }
 
+/* Cover & Pages */
 .cover, .page {
     width: 100%;
     height: 100%;
@@ -50,7 +54,6 @@ body {
     background: #fff;
     border: 2px solid #d81b60;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    flex-direction: row;
     text-align: center;
 }
 
@@ -74,13 +77,13 @@ body {
     justify-content: center;
 }
 
+/* Image Inside the Book */
 .event-photo {
-    max-width: 100%; /* Prevent overflow */
+    max-width: 100%;
     height: auto;
 }
 
-
-/* Falling rose petals effect */
+/* 🌹 Falling Rose Petals Effect */
 .petal {
     position: absolute;
     width: 30px;
@@ -96,40 +99,39 @@ body {
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(110vh) rotate(360deg);
         opacity: 0;
     }
 }
 
+/* Ensure Petals Keep Falling Smoothly */
 .petal {
     top: -10vh;
     left: 50%;
 }
 
-
-/* Responsive design for mobile */
+/* 🌟 Responsive Design for Mobile */
 @media (max-width: 600px) {
     .book-container {
-    min-height: 100vh; /* Ensure it takes up full screen height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0; /* Remove unnecessary spacing */
-    position: relative; /* Keep it positioned correctly */
-}
-
+        min-height: 100vh; /* Maintain full height */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Keep book from going too low */
+        padding-top: 20px;
+        position: relative;
+    }
 
     .book {
-        width: 80vw; /* Adjust width dynamically */
-        height: auto;
-        flex-direction: column; /* Fix typo: 'coloumn' -> 'column' */
+        max-width: 80vw; /* Responsive size */
+        height: auto; /* Adjust height dynamically */
+        flex-direction: column; /* Fix stacking */
     }
 
     .cover, .page {
         width: 100%;
         height: auto;
-        font-size: 16px; /* Adjust font size for smaller screens */
+        font-size: 16px; /* Adjust text size */
         padding: 10px;
     }
 
