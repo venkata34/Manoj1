@@ -20,7 +20,7 @@ body {
 
 .book {
      width: 500px;
-    height: 350px;
+    height: 500px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
@@ -81,8 +81,8 @@ body {
 /* Falling rose petals effect */
 .petal {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background: url('rose1.jpg') no-repeat center/contain;
     opacity: 0.8;
     animation: fall linear infinite;
@@ -114,8 +114,8 @@ body {
     }
 
     .cover, .page {
-        font-size: 16px;
-        padding: 10px;
+        font-size: 18px;
+        padding: 15px;
     }
 
     .event-photo {
