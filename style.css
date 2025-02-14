@@ -1,97 +1,8 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fce4ec;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-/* Centering the Book */
-.book-container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
-
-/* Book Styling */
-.book {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Book Open & Close Transitions */
-.closed {
-    transform: rotateY(0deg);
-}
-
-.open {
-    transform: rotateY(-180deg);
-}
-
-/* Cover & Pages */
-.cover, .page {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border: 2px solid #d81b60;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.cover {
-    background: #d81b60;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.page.left {
-    transform: rotateY(180deg);
-}
-
-.page.right {
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Hide photo until book is tapped */
-.hidden {
-    display: none;
-}
-
-/* Image Inside the Book */
-.event-photo {
-    max-width: 90%;
-    height: auto;
-}
-
-/* 🌹 Falling Rose Petals Effect */
 /* 🌹 Falling Rose Petals Effect */
 .petal {
     position: absolute;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     background: url('rose1.jpg') no-repeat center/contain;
     opacity: 0.8;
     animation: fall linear infinite;
@@ -101,7 +12,7 @@ body {
 /* Petal Falling Animation */
 @keyframes fall {
     0% {
-        transform: translateY(-5vh) rotate(0deg);
+        transform: translateY(-10vh) rotate(0deg);
         opacity: 1;
     }
     100% {
@@ -110,28 +21,25 @@ body {
     }
 }
 
+/* 📖 Book Centering & Opening */
+.book-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* 🌟 Responsive Design for Mobile */
-@media (max-width: 600px) {
-    .book-container {
-        height: 100vh;
-        padding-top: 10px;
-    }
+.book {
+    width: 500px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
 
-    .book {
-        width: 90vw;
-        height: auto;
-    }
+.closed {
+    transform: rotateY(0deg);
+}
 
-    .cover, .page {
-        width: 100%;
-        height: auto;
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .event-photo {
-        width: 80%;
-        height: auto;
-    }
+.open {
+    transform: rotateY(-180deg);
 }
