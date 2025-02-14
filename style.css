@@ -10,14 +10,13 @@ body {
 
 /* Book Container */
 .book-container {
-    min-height: 100vh; /* Ensure full height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Keep book higher on screen */
-    padding-top: 10px; /* Adjust padding to move book up */
+    justify-content: flex-start;
+    padding-top: 20px;
     position: relative;
-    z-index: 1;
 }
 
 /* Book Styling */
@@ -28,7 +27,6 @@ body {
     transform-style: preserve-3d;
     transition: transform 1s;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -62,6 +60,7 @@ body {
     color: white;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer; /* Indicate clickable */
 }
 
 .page.left {
@@ -104,34 +103,21 @@ body {
     }
 }
 
-/* Ensure Petals Keep Falling Smoothly */
-.petal {
-    top: -10vh;
-    left: 50%;
-}
-
 /* 🌟 Responsive Design for Mobile */
 @media (max-width: 600px) {
     .book-container {
-        min-height: 100vh; /* Maintain full height */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* Keep book from going too low */
         padding-top: 20px;
-        position: relative;
     }
 
     .book {
-        max-width: 80vw; /* Responsive size */
-        height: auto; /* Adjust height dynamically */
-        flex-direction: column; /* Fix stacking */
+        max-width: 80vw;
+        height: auto;
     }
 
     .cover, .page {
         width: 100%;
         height: auto;
-        font-size: 16px; /* Adjust text size */
+        font-size: 16px;
         padding: 10px;
     }
 
