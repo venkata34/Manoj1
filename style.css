@@ -99,6 +99,12 @@ body {
     }
 }
 
+.petal {
+    top: -10vh;
+    left: 50%;
+}
+
+
 /* Responsive design for mobile */
 @media (max-width: 600px) {
     .book {
