@@ -87,3 +87,20 @@ body {
         opacity: 0;
     }
 }
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    .book {
+        width: 90%;
+        height: auto;
+    }
+
+    .cover, .page {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .event-photo {
+        width: 80%;
+    }
+}
