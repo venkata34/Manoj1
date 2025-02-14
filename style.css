@@ -65,18 +65,20 @@ body {
     transform: rotateY(180deg);
 }
 
-.event-photo {
-    width: 100%;
-    height: auto;
-}
-
 .page.right {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
+
+.event-photo {
+    max-width: 100%; /* Prevent overflow */
+    height: auto;
+}
+
 
 /* Falling rose petals effect */
 .petal {
@@ -108,15 +110,18 @@ body {
 /* Responsive design for mobile */
 @media (max-width: 600px) {
     .book-container {
-        height: auto; /* Adjust height dynamically */
-        display: flex;
-        flex-direction: column; /* Ensure it stacks properly */
-        align-items: center;
-        justify-content: center;
-    }
+    min-height: 100vh; /* Ensure it takes up full screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove unnecessary spacing */
+    position: relative; /* Keep it positioned correctly */
+}
+
 
     .book {
-        width: 90vw; /* Adjust width dynamically */
+        width: 80vw; /* Adjust width dynamically */
         height: auto;
         flex-direction: column; /* Fix typo: 'coloumn' -> 'column' */
     }
