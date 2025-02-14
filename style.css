@@ -19,8 +19,8 @@ body {
 }
 
 .book {
-     width: 400px;
-    height: 250px;
+     width: 500px;
+    height: 350px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
@@ -83,7 +83,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: url('rose1.png') no-repeat center/contain;
+    background: url('rose1.jpg') no-repeat center/contain;
     opacity: 0.8;
     animation: fall linear infinite;
 }
