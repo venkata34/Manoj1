@@ -107,18 +107,29 @@ body {
 
 /* Responsive design for mobile */
 @media (max-width: 600px) {
+    .book-container {
+        height: auto; /* Adjust height dynamically */
+        display: flex;
+        flex-direction: column; /* Ensure it stacks properly */
+        align-items: center;
+        justify-content: center;
+    }
+
     .book {
-        width: 90%;
+        width: 90vw; /* Adjust width dynamically */
         height: auto;
-        flex-direction: coloumn;
+        flex-direction: column; /* Fix typo: 'coloumn' -> 'column' */
     }
 
     .cover, .page {
-        font-size: 18px;
-        padding: 15px;
+        width: 100%;
+        height: auto;
+        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 10px;
     }
 
     .event-photo {
         width: 80%;
+        height: auto;
     }
 }
