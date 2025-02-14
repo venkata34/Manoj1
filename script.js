@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const book = document.getElementById("book");
     const bgMusic = document.getElementById("bg-music");
+    const cover = document.getElementById("cover");
 
     // Open book when cover is clicked
-    document.querySelector(".cover").addEventListener("click", function () {
+    cover.addEventListener("click", function () {
         book.classList.remove("closed");
         book.classList.add("open");
         bgMusic.play();
@@ -27,8 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 8000);
     }
 
-    // Generate multiple petals
-    for (let i = 0; i < 20; i++) {
-        setTimeout(createPetal, i * 500); // Stagger petal appearance
+    // Generate multiple petals continuously
+    function startPetalEffect() {
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createPetal, i * 500);
+        }
     }
+
+    // Start petals only when book opens
+    cover.addEventListener("click", startPetalEffect);
 });
