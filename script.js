@@ -1,41 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const book = document.getElementById("book");
-    const bgMusic = document.getElementById("bg-music");
+function openBook() {
+    document.getElementById("book").classList.toggle("open");
 
-    function openBook() {
-        console.log("📖 Book clicked!");
-        book.classList.remove("closed");
-        book.classList.add("open");
-        bgMusic.play();
+    // Play music when book opens
+    let audio = document.getElementById("bg-music");
+    if (audio.paused) {
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
     }
+}
 
-    // Fix: Attach event listeners correctly
-    book.addEventListener("click", openBook);
-    book.addEventListener("touchstart", openBook);
-
-    // 🌹 Generate Falling Rose Petals
-    function createPetal() {
-        const petal = document.createElement("div");
+// Create falling petals
+function createPetals() {
+    for (let i = 0; i < 15; i++) {
+        let petal = document.createElement("div");
         petal.classList.add("petal");
-
         petal.style.left = Math.random() * 100 + "vw";
-        petal.style.animationDuration = Math.random() * 5 + 3 + "s";
-        petal.style.top = "-10vh"; // Start from the top
-
+        petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
         document.body.appendChild(petal);
 
-        setTimeout(() => {
-            petal.remove();
-            createPetal();
-        }, 8000);
+        setTimeout(() => petal.remove(), 5000);
     }
+}
 
-    function startPetalEffect() {
-        console.log("🌹 Starting petal effect...");
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createPetal, i * 500);
-        }
-    }
-
-    startPetalEffect();
-});
+setInterval(createPetals, 500);
