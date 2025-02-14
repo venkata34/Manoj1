@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day ❤️</title>
+    <title>Magical Event Invitation</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Valentine's Day ❤️</h1>
-        <p>Dear [Name],</p>
-        <p>You are the most special person in my life. Will you be my Valentine? 💕</p>
-        <button id="yes-btn">Yes ❤️</button>
-        <button id="no-btn">No 😢</button>
-        <p id="response"></p>
+    <audio id="bg-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="book-container" onclick="openBook()">
+        <div class="book closed" id="book">
+            <div class="cover">📖 Tap to Reveal the Magic ✨</div>
+            <div class="page left">
+                <img src="photo.jpg" alt="Event Photo" class="event-photo">
+            </div>
+            <div class="page right">
+                <h2 class="invitation-title">You're Invited to a Grand Celebration!</h2>
+                <p class="event-detail"><strong>Date:</strong> 14th February 2025</p>
+                <p class="event-detail"><strong>Location:</strong> Enchanted Ballroom, XYZ Castle</p>
+                <p class="event-detail"><strong>Time:</strong> 7:00 PM - Midnight</p>
+                <p class="event-detail">Join us for an evening of love, laughter, and enchantment. 🌟</p>
+            </div>
+        </div>
     </div>
+    <script>
+        function openBook() {
+            document.getElementById("book").classList.remove("closed");
+            document.getElementById("book").classList.add("open");
+            document.getElementById("bg-music").play();
+        }
+    </script>
 </body>
 </html>
+
