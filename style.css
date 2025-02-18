@@ -20,7 +20,7 @@ body {
 .book {
     width: 90%;
     max-width: 400px;
-    height: auto;
+    height: 500px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
